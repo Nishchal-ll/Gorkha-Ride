@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Gorkha Ride Redirect</title>
+    <script>
+        function redirectToStore() {
+            var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+            // Check if it's an Android device
+            if (/android/i.test(userAgent)) {
+                window.location.href = 'https://play.google.com/store/apps/details?id=com.gorkharide.user&pcampaignid=web_share';
+            }
+            // Check if it's an iOS device
+            else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+                window.location.href = 'https://apps.apple.com/in/app/gorkha-ride/id6511239046';
+            } else {
+                // Optional fallback link
+                window.location.href = 'https://gorkharide.com/'; // Replace with a fallback URL if needed
+            }
+        }
+    </script>
+</head>
+<body onload="redirectToStore()">
+</body>
+</html>
